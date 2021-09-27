@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SharePriceMVVM</string>
+    <string name="description_topBar">Наименование акции</string>
+    <string name="go_to_description_fragment">Перейти на фрагмент описания</string>
 </resources>

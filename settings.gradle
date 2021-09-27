@@ -8,3 +8,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "SharePriceMVVM"
 include ':app'
+include ':presentation'
+include ':domain'
+include ':data'
+include ':test'
