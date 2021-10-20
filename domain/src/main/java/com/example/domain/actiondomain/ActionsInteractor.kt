@@ -1,7 +1,7 @@
 package com.example.domain.actiondomain
 
-class ActionsInteractor(private val actionsInteractors: ActionsInteractorInterface) {
+class ActionsInteractor(private val actionsRepo: ActionsRepositoryInterface) {
     fun getActions(): ActionsDomainModel {
-        return actionsInteractors.getAction()
+        return actionsRepo.getAction()
     }
 }
