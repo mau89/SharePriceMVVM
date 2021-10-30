@@ -8,12 +8,15 @@ import com.example.domain.actiondomain.globalDependenciesProvider
 
 class App : Application() {
 
+    lateinit var appComponent: AppComponent
+
     override fun onCreate() {
         super.onCreate()
-        globalDependenciesProvider = object : GlobalDependenciesProvider {
-            override fun provideActionsInteractor(): ActionsInteractor {
-                return ActionsInteractor(ActionsRepository())
-            }
-        }
+        appComponent = DaggerAppComponent.create()
+//        globalDependenciesProvider = object : GlobalDependenciesProvider {
+//            override fun provideActionsInteractor(): ActionsInteractor {
+//                return ActionsInteractor(ActionsRepository())
+//            }
+//        }
     }
 }

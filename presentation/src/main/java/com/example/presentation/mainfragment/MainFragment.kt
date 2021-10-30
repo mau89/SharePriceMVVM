@@ -1,7 +1,9 @@
 package com.example.presentation.mainfragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
@@ -23,11 +25,12 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 //        }
 //    })
 
-    internal lateinit var viewModel: MainViewModel
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        MainFragmentDependencyProvider.inject(this)
+//        MainFragmentDependencyProvider.inject(this)
+//        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -43,7 +46,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         }
 
         viewModel.actionsDomainModel.observe(viewLifecycleOwner, {
-            Timber.d("scope ${it}")
+            Timber.d(it.name)
+            Toast.makeText(requireContext(), "asdada", Toast.LENGTH_SHORT).show()
         })
     }
 }

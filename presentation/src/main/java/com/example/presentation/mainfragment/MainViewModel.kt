@@ -5,8 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.domain.actiondomain.ActionsDomainModel
 import com.example.domain.actiondomain.ActionsInteractor
+import javax.inject.Inject
 
-class MainViewModel(
+class MainViewModel @Inject constructor(
     private val actionsInteractor: ActionsInteractor
 ) : ViewModel() {
 
@@ -17,6 +18,7 @@ class MainViewModel(
     val actionsDomainModel: LiveData<ActionsDomainModel> = _actionsDomainModel
 
     fun getActions() {
-        actionsInteractor.getActions()
+        val aaa = actionsInteractor.getActions()
+        _actionsDomainModel.value = aaa
     }
 }
