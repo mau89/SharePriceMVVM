@@ -7,7 +7,7 @@ import com.example.domain.actiondomain.ActionsDomainModel
 import com.example.domain.actiondomain.ActionsInteractor
 import javax.inject.Inject
 
-class MainViewModel @Inject constructor(
+class MainViewModel(
     private val actionsInteractor: ActionsInteractor
 ) : ViewModel() {
 

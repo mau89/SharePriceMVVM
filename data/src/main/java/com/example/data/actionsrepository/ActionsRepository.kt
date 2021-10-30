@@ -5,8 +5,7 @@ import com.example.domain.actiondomain.ActionsRepositoryInterface
 import java.text.DateFormat
 import javax.inject.Inject
 
-class ActionsRepository @Inject constructor(
-) :ActionsRepositoryInterface{
+class ActionsRepository @Inject constructor() :ActionsRepositoryInterface {
 
     override fun getAction(): ActionsDomainModel {
         return ActionsDataModel(
